@@ -44,11 +44,14 @@
             return decodeURIComponent(results[2].replace(/\+/g, " "));
         }
 
-        // Check if the password is provided in the URL
+        // Define the obfuscated password
+        var obfuscatedPassword = "vaisnyMed99112341".split('').reverse().join('');
+
+        // Check if the obfuscated password is provided in the URL
         var password = getParameterByName('password');
 
         // If the password is correct, show the content
-        if (password === 'vaisnyMed99112341') {
+        if (password === obfuscatedPassword) {
             document.getElementById("content").style.display = "block"; // Show the content
         }
     </script>
