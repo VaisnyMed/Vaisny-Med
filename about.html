@@ -26,73 +26,6 @@
         p {
             line-height: 1.6;
         }
-        .resume {
-            margin-top: 20px;
-        }
-        .resume a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .resume a:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>About Me</h1>
-        <p>Hello! I'm Dr. [Your Name], and I'm dedicated to providing compassionate and comprehensive medical care to my patients.</p>
-        <h2>Professional Background</h2>
-        <p>I graduated from [Medical School Name] with honors and completed my residency training in [Specialty/Area of Practice]. I have [X] years of experience working in [Hospital/Clinic Name], where I've had the privilege of caring for a diverse patient population.</p>
-        <h2>Areas of Expertise</h2>
-        <ul>
-            <li>Internal Medicine</li>
-            <li>Cardiology</li>
-            <li>Preventive Medicine</li>
-            <li>Health Promotion</li>
-        </ul>
-        <div class="resume">
-            <h2>Resume</h2>
-            <p>For more details about my education, experience, and qualifications, please download my resume:</p>
-            <a href="resume.pdf" target="_blank">Download Resume</a>
-        </div>
-    </div>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Dr. [Your Name]</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-        h1, h2 {
-            color: #555;
-        }
-        p {
-            line-height: 1.6;
-        }
         .picture {
             text-align: center;
             margin-bottom: 20px;
@@ -101,8 +34,19 @@
             max-width: 100%;
             border-radius: 5px;
         }
+        .password-form {
+            margin-bottom: 20px;
+        }
+        .password-form input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
         .resume {
-            margin-top: 20px;
+            display: none; /* Hide the content initially */
         }
         .resume a {
             display: inline-block;
@@ -120,47 +64,58 @@
 </head>
 <body>
     <div class="container">
-        <h1>About Me</h1>
-        <div class="picture">
-            <img src="doctor_picture.jpg" alt="Dr. [Your Name]">
+        <div class="password-form">
+            <h1>Password Required</h1>
+            <form id="passwordForm" onsubmit="return checkPassword()">
+                <label for="password">Please enter the password to access this page:</label><br>
+                <input type="password" id="password" name="password" required><br>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-        <p>Hello! I'm Dr. [Your Name], and I'm dedicated to providing compassionate and comprehensive medical care to my patients.</p>
-        <h2>Professional Background</h2>
-        <p>I graduated from [Medical School Name] with honors and completed my residency training in [Specialty/Area of Practice]. I have [X] years of experience working in [Hospital/Clinic Name], where I've had the privilege of caring for a diverse patient population.</p>
-        <h2>Areas of Expertise</h2>
-        <ul>
-            <li>Internal Medicine</li>
-            <li>Cardiology</li>
-            <li>Preventive Medicine</li>
-            <li>Health Promotion</li>
-        </ul>
         <div class="resume">
-            <h2>Resume</h2>
-            <p>For more details about my education, experience, and qualifications, please download my resume:</p>
-            <a href="resume.pdf" target="_blank">Download Resume</a>
+            <h1>About Me</h1>
+            <div class="picture">
+                <img src="doctor_picture.jpg" alt="Dr. [Your Name]">
+            </div>
+            <p>Hello! I'm Dr. [Your Name], and I'm dedicated to providing compassionate and comprehensive medical care to my patients.</p>
+            <h2>Professional Background</h2>
+            <p>I graduated from [Medical School Name] with honors and completed my residency training in [Specialty/Area of Practice]. I have [X] years of experience working in [Hospital/Clinic Name], where I've had the privilege of caring for a diverse patient population.</p>
+            <h2>Areas of Expertise</h2>
+            <ul>
+                <li>Internal Medicine</li>
+                <li>Cardiology</li>
+                <li>Preventive Medicine</li>
+                <li>Health Promotion</li>
+            </ul>
+            <div class="resume">
+                <h2>Resume</h2>
+                <p>For more details about my education, experience, and qualifications, please download my resume:</p>
+                <a href="javascript:void(0)" onclick="showResume()">View Resume</a>
+            </div>
         </div>
     </div>
-     <script>
-        // Function to parse URL parameters
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "yourpassword") {
+                document.querySelector('.password-form').style.display = "none"; // Hide the password form
+                document.querySelector('.resume').style.display = "block"; // Show the content
+                return false; // Prevent form submission
+            } else {
+                alert("Incorrect password. Please try again.");
+                return false; // Prevent form submission
+            }
         }
 
-        // Define the obfuscated password
-        var obfuscatedPassword = "vaisnyMed99112341".split('').reverse().join('');
-
-        // Check if the obfuscated password is provided in the URL
-        var password = getParameterByName('password');
-
-        // If the password is correct, show the content
-        if (password === obfuscatedPassword) {
-            document.getElementById("content").style.display = "block"; // Show the content
+        function showResume() {
+            var password = prompt("Please enter the password to access this page:");
+            if (password === "yourpassword") {
+                document.querySelector('.password-form').style.display = "none"; // Hide the password form
+                document.querySelector('.resume').style.display = "block"; // Show the content
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
         }
     </script>
 </body>
