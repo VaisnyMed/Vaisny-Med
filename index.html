@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: none; /* Hide the content initially */
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="container">
+        <h1>Welcome to the Website</h1>
+        <p>This is a simple example of a protected website.</p>
+        <p>You can customize this page by editing the HTML and CSS files in your repository.</p>
+    </div>
+
+    <script>
+        // Function to parse URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Check if the password is provided in the URL
+        var password = getParameterByName('password');
+        var correctPassword = "yourpassword";
+
+        // If the password is correct, show the content
+        if (password === correctPassword) {
+            document.getElementById("content").style.display = "block"; // Show the content
+        }
+    </script>
+</body>
+</html>
