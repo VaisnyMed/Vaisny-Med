@@ -27,9 +27,9 @@
 </head>
 <body>
     <div id="content" class="container">
-        <h1>Welcome to the Website</h1>
-        <p>This is a simple example of a protected website.</p>
-        <p>You can customize this page by editing the HTML and CSS files in your repository.</p>
+        <h1>Welcome to Vaisny's Medicine Information Web Page</h1>
+        <p>This would be the landing page which you could then visit various other parts of the site</p>
+        <p>This would have a photo and some key information about Vaisny</p>
     </div>
 
     <script>
@@ -46,10 +46,9 @@
 
         // Check if the password is provided in the URL
         var password = getParameterByName('password');
-        var correctPassword = "vaisnyMed99112341";
 
         // If the password is correct, show the content
-        if (password === correctPassword) {
+        if (password === 'vaisnyMed99112341') {
             document.getElementById("content").style.display = "block"; // Show the content
         }
     </script>
