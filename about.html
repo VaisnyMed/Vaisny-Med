@@ -34,17 +34,6 @@
             max-width: 100%;
             border-radius: 5px;
         }
-        .password-form {
-            margin-bottom: 20px;
-        }
-        .password-form input[type="password"] {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
         .resume {
             display: none; /* Hide the content initially */
         }
@@ -63,16 +52,8 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="password-form">
-            <h1>Password Required</h1>
-            <form id="passwordForm" onsubmit="return checkPassword()">
-                <label for="password">Please enter the password to access this page:</label><br>
-                <input type="password" id="password" name="password" required><br>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        <div class="resume">
+    <div class="container" id="container">
+        <div class="resume" id="resumeContent">
             <h1>About Me</h1>
             <div class="picture">
                 <img src="doctor_picture.jpg" alt="Dr. [Your Name]">
@@ -90,31 +71,20 @@
             <div class="resume">
                 <h2>Resume</h2>
                 <p>For more details about my education, experience, and qualifications, please download my resume:</p>
-                <a href="javascript:void(0)" onclick="showResume()">View Resume</a>
+                <a href="resume.pdf" target="_blank">Download Resume</a>
             </div>
         </div>
     </div>
 
     <script>
-        function checkPassword() {
-            var password = document.getElementById("password").value;
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var password = urlParams.get('password');
             if (password === "yourpassword") {
-                document.querySelector('.password-form').style.display = "none"; // Hide the password form
-                document.querySelector('.resume').style.display = "block"; // Show the content
-                return false; // Prevent form submission
+                document.getElementById("container").style.display = "block"; // Show the content
             } else {
                 alert("Incorrect password. Please try again.");
-                return false; // Prevent form submission
-            }
-        }
-
-        function showResume() {
-            var password = prompt("Please enter the password to access this page:");
-            if (password === "yourpassword") {
-                document.querySelector('.password-form').style.display = "none"; // Hide the password form
-                document.querySelector('.resume').style.display = "block"; // Show the content
-            } else {
-                alert("Incorrect password. Please try again.");
+                window.location.href = "/"; // Redirect to the home page
             }
         }
     </script>
