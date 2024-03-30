@@ -3,58 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaisny's Medical Informational Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            display: none; /* Hide the content initially */
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-    </style>
+    <title>Portfolio</title>
 </head>
-<body>
-    <div id="content" class="container">
-        <h1>Welcome to Vaisny's Medicine Information Web Page</h1>
-        <p>This would be the landing page which you could then visit various other parts of the site</p>
-        <p>This would have a photo and some key information about Vaisny</p>
-        <a href="./about?password=14321199deMynsiav">Read the about page</a>
-    </div>
+<body style="margin: 0; padding: 0; width: 100%; height: 100%;">
 
-    <script>
-        // Function to parse URL parameters
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
+<div class="sidebar" style="position: fixed; top: 0; left: 0; width: 250px; height: 100%; background-color: #333; padding: 20px; box-sizing: border-box;">
+    <img src="your-image.jpg" alt="Profile Picture" class="profile-img" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+    <nav>
+        <a href="#personal-information" style="display: block; color: white; text-decoration: none; margin-bottom: 10px;">Personal Information</a>
+        <a href="#education" style="display: block; color: white; text-decoration: none; margin-bottom: 10px;">Education</a>
+        <a href="#experience" style="display: block; color: white; text-decoration: none; margin-bottom: 10px;">Experience</a>
+        <a href="#achievements" style="display: block; color: white; text-decoration: none; margin-bottom: 10px;">Achievements</a>
+        <a href="#interests" style="display: block; color: white; text-decoration: none; margin-bottom: 10px;">Personal Interests</a>
+    </nav>
+</div>
 
-        // Define the obfuscated password
-        var obfuscatedPassword = "vaisnyMed99112341".split('').reverse().join('');
+<div class="main-content" style="margin-left: 250px; padding: 20px;">
+    <section id="personal-information">
+        <h2 style="border-bottom: 2px solid #333; padding-bottom: 10px;">Personal Information</h2>
+        <p>Content goes here...</p>
+    </section>
+    <section id="education">
+        <h2 style="border-bottom: 2px solid #333; padding-bottom: 10px;">Education</h2>
+        <p>Content goes here...</p>
+    </section>
+    <section id="experience">
+        <h2 style="border-bottom: 2px solid #333; padding-bottom: 10px;">Experience</h2>
+        <p>Content goes here...</p>
+    </section>
+    <section id="achievements">
+        <h2 style="border-bottom: 2px solid #333; padding-bottom: 10px;">Achievements</h2>
+        <p>Content goes here...</p>
+    </section>
+    <section id="interests">
+        <h2 style="border-bottom: 2px solid #333; padding-bottom: 10px;">Personal Interests</h2>
+        <p>Content goes here...</p>
+    </section>
+</div>
 
-        // Check if the obfuscated password is provided in the URL
-        var password = getParameterByName('password');
-
-        // If the password is correct, show the content
-        if (password === obfuscatedPassword) {
-            document.getElementById("content").style.display = "block"; // Show the content
-        }
-    </script>
 </body>
 </html>
