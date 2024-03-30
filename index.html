@@ -43,41 +43,12 @@
         .sidebar nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 10px 10px 20px; /* Added padding for logo */
-            display: flex; /* Flexbox layout */
-            align-items: center; /* Center vertically */
-            justify-content: flex-start; /* Align content to the left */
-            white-space: nowrap; /* Prevent text wrapping */
-            overflow: hidden; /* Hide overflow */
-            text-overflow: ellipsis; /* Add ellipsis */
+            padding: 10px; /* Adjusted padding for simplicity */
+            display: block; /* Display each link as a block element */
             transition: padding 0.5s; /* Smooth transition for padding */
         }
         .sidebar:hover nav a {
-            padding: 10px; /* Reduced padding on hover */
-        }
-        .sidebar nav::before {
-            content: "";
-            display: inline-block;
-            width: 24px; /* Adjust size of the logo */
-            height: 24px; /* Adjust size of the logo */
-            margin-right: 10px; /* Added margin for spacing */
-            border-radius: 5px; /* Rounded corners */
-            background-color: #fff; /* Placeholder color */
-        }
-        .sidebar nav a[href="#personal-information"]::before {
-            content: url('personal-info-icon.png'); /* Personal Info icon */
-        }
-        .sidebar nav a[href="#education"]::before {
-            content: url('education-icon.png'); /* Education icon */
-        }
-        .sidebar nav a[href="#experience"]::before {
-            content: url('experience-icon.png'); /* Experience icon */
-        }
-        .sidebar nav a[href="#achievements"]::before {
-            content: url('achievements-icon.png'); /* Achievements icon */
-        }
-        .sidebar nav a[href="#interests"]::before {
-            content: url('interests-icon.png'); /* Interests icon */
+            padding: 10px 20px; /* Adjusted padding on hover */
         }
         .main-content {
             margin-left: 60px; /* Adjusted for initial sidebar width */
