@@ -37,16 +37,29 @@
             width: 80px; /* Larger size on hover */
             height: 80px;
         }
+        .sidebar nav {
+            padding-top: 20px; /* Adjusted padding */
+        }
         .sidebar nav a {
             color: white;
             text-decoration: none;
-            padding: 5px 10px; /* Reduced padding */
-            text-align: center;
-            display: block;
-            white-space: nowrap; /* Prevents the text from wrapping */
+            padding: 10px 10px 10px 20px; /* Added padding for logo */
+            display: flex; /* Flexbox layout */
+            align-items: center; /* Center vertically */
+            justify-content: flex-start; /* Align content to the left */
+            white-space: nowrap; /* Prevent text wrapping */
             overflow: hidden; /* Hide overflow */
             text-overflow: ellipsis; /* Add ellipsis */
             transition: padding 0.5s; /* Smooth transition for padding */
+        }
+        .sidebar:hover nav a {
+            padding: 10px; /* Reduced padding on hover */
+        }
+        .sidebar nav img {
+            max-width: 24px; /* Adjusted image size */
+            margin-right: 10px; /* Added margin for spacing */
+            border-radius: 5px; /* Rounded corners */
+            overflow: hidden; /* Hide overflowing corners */
         }
         .main-content {
             margin-left: 60px; /* Adjusted for initial sidebar width */
@@ -72,11 +85,11 @@
 <div class="sidebar">
     <img src="your-image.jpg" alt="Profile Picture" class="profile-img">
     <nav>
-        <a href="#personal-information">Personal Information</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#interests">Interests</a>
+        <a href="#personal-information"><img src="personal-info-icon.png" alt="Personal Info Icon"> Personal Information</a>
+        <a href="#education"><img src="education-icon.png" alt="Education Icon"> Education</a>
+        <a href="#experience"><img src="experience-icon.png" alt="Experience Icon"> Experience</a>
+        <a href="#achievements"><img src="achievements-icon.png" alt="Achievements Icon"> Achievements</a>
+        <a href="#interests"><img src="interests-icon.png" alt="Interests Icon"> Interests</a>
     </nav>
 </div>
 
