@@ -39,6 +39,7 @@
         }
         .sidebar nav {
             padding-top: 20px; /* Adjusted padding */
+            position: relative; /* Relative positioning for the nav */
         }
         .sidebar nav a {
             color: white;
@@ -55,16 +56,16 @@
         }
         .sidebar nav::after {
             content: '►';
-            font-size: 24px;
+            font-size: 36px; /* Increased font size for the arrow */
             color: white;
             position: absolute;
-            bottom: 10px;
+            bottom: 50%;
             left: 50%;
-            transform: translateX(-50%);
-            transition: transform 0.5s; /* Smooth transition for arrow rotation */
+            transform: translate(-50%, 50%); /* Center the arrow */
+            transition: transform 0.5s; /* Smooth transition for arrow position */
         }
         .sidebar:hover nav::after {
-            transform: translateX(-50%) rotate(180deg); /* Rotate arrow on hover */
+            transform: translate(-50%, -50%) rotate(180deg); /* Rotate arrow on hover */
         }
         .main-content {
             margin-left: 60px; /* Adjusted for initial sidebar width */
