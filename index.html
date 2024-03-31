@@ -46,7 +46,6 @@
             padding: 10px; /* Adjusted padding for simplicity */
             display: block; /* Display each link as a block element */
             transition: padding 0.5s; /* Smooth transition for padding */
-            position: relative; /* Position relative for arrow pseudo-element */
             white-space: nowrap; /* Prevent text wrapping */
             overflow: hidden; /* Hide overflow */
             text-overflow: ellipsis; /* Add ellipsis */
@@ -54,21 +53,18 @@
         .sidebar:hover nav a {
             padding: 10px 20px; /* Adjusted padding on hover */
         }
-        .sidebar nav a::after {
-            content: '';
+        .sidebar nav::after {
+            content: '►';
+            font-size: 24px;
+            color: white;
             position: absolute;
-            bottom: 0;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 8px 6px 0 6px;
-            border-color: white transparent transparent transparent;
-            transition: border-color 0.3s;
+            transition: transform 0.5s; /* Smooth transition for arrow rotation */
         }
-        .sidebar nav a:hover::after {
-            border-color: #fff transparent transparent transparent;
+        .sidebar:hover nav::after {
+            transform: translateX(-50%) rotate(180deg); /* Rotate arrow on hover */
         }
         .main-content {
             margin-left: 60px; /* Adjusted for initial sidebar width */
