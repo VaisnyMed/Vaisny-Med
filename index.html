@@ -50,34 +50,25 @@
     </div>
 
     <script>
-        document.querySelector('.arrow').addEventListener('click', function() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.width = sidebar.offsetWidth === 60 ? '200px' : '60px';
-            const mainContent = document.querySelector('.main-content');
-            mainContent.style.marginLeft = sidebar.offsetWidth === 60 ? '60px' : '200px';
-        });
+        // Function to get URL parameters
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.has(name) ? urlParams.get(name) : null;
+        }
+
+        // Check if the password parameter is correct
+        const password = getURLParameter('password');
+        const correctPassword = 'yourPassword'; // Set your password here
+
+        if (password === correctPassword) {
+            // If the password is correct, show the page content
+            document.getElementById('pageContent').style.display = 'block';
+        } else {
+            // If the password is incorrect, you can redirect or ask for the password
+            document.body.innerHTML = '<p>Access denied. You must provide a correct password.</p>';
+            // Or redirect: window.location.href = 'login_page.html';
+        }
     </script>
-</div>
-
-<script>
-    // Function to get URL parameters
-    function getURLParameter(name) {
-        return new URLSearchParams(window.location.search).get(name);
-    }
-
-    // Check if the password parameter is correct
-    const password = getURLParameter('password');
-    const correctPassword = 'yourPassword'; // Set your password here
-
-    if (password === correctPassword) {
-        // If the password is correct, show the page content
-        document.getElementById('pageContent').style.display = 'block';
-    } else {
-        // If the password is incorrect, you can redirect or ask for the password
-        document.body.innerHTML = '<p>Access denied. You must provide a correct password.</p>';
-        // Or redirect: window.location.href = 'login_page.html';
-    }
-</script>
 
 </body>
 </html>
