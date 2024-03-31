@@ -59,13 +59,13 @@
             font-size: 36px; /* Increased font size for the arrow */
             color: white;
             position: absolute;
-            bottom: 50%;
+            bottom: -40px; /* Adjusted position to be below the links */
             left: 50%;
-            transform: translate(-50%, 50%); /* Center the arrow */
+            transform: translateX(-50%);
             transition: transform 0.5s; /* Smooth transition for arrow position */
         }
         .sidebar:hover nav::after {
-            transform: translate(-50%, -50%) rotate(180deg); /* Rotate arrow on hover */
+            transform: translateX(-50%) rotate(180deg); /* Rotate arrow on hover */
         }
         .main-content {
             margin-left: 60px; /* Adjusted for initial sidebar width */
@@ -97,6 +97,7 @@
         <a href="#achievements">Achievements</a>
         <a href="#interests">Interests</a>
     </nav>
+    <div class="arrow"></div>
 </div>
 
 <div class="main-content">
