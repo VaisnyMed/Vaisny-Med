@@ -63,6 +63,7 @@
             left: 50%;
             transform: translateX(-50%);
             transition: transform 0.5s; /* Smooth transition for arrow position */
+            cursor: pointer; /* Add pointer cursor to indicate clickable */
         }
         .sidebar:hover nav::after {
             transform: translateX(-50%) rotate(180deg); /* Rotate arrow on hover */
@@ -122,6 +123,15 @@
         <p>Content goes here...</p>
     </section>
 </div>
+
+<script>
+    document.querySelector('.arrow').addEventListener('click', function() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.width = sidebar.offsetWidth === 60 ? '200px' : '60px';
+        const mainContent = document.querySelector('.main-content');
+        mainContent.style.marginLeft = sidebar.offsetWidth === 60 ? '60px' : '200px';
+    });
+</script>
 
 </body>
 </html>
