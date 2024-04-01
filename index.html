@@ -12,15 +12,24 @@
             width: 100%;
             height: 100%;
             font-family: 'Roboto', sans-serif;
+            background-color: rgba(144,144,144,0.25); /* Set background color */
             opacity: 0; /* Initially set opacity to 0 */
-            animation: fadeIn 2s ease-in forwards; /* Apply fade-in animation */
+            animation: fadeInRight 1.5s ease-in forwards, slideInRight 1.5s ease-in forwards; /* Apply fade-in and slide-in animations */
         }
-        @keyframes fadeIn {
+        @keyframes fadeInRight {
             0% {
                 opacity: 0; /* Start with opacity 0 */
             }
             100% {
                 opacity: 1; /* End with opacity 1 */
+            }
+        }
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%); /* Start off-screen to the right */
+            }
+            100% {
+                transform: translateX(0); /* End at the original position */
             }
         }
         .container {
@@ -53,35 +62,61 @@
             margin-right: auto;
             display: block;
         }
+
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 600px) {
+            .large-photo {
+                margin-bottom: 20px; /* Add space between photo and text */
+            }
+        }
+
+        /* Media query for larger screens */
+        @media only screen and (min-width: 601px) {
+            .container {
+                display: flex; /* Use flexbox for layout */
+                justify-content: center; /* Center horizontally */
+                align-items: flex-start; /* Align items to the top */
+            }
+            .large-photo {
+                width: 50%; /* Take up half of the container width */
+                margin-right: 20px; /* Add space between photo and text */
+            }
+            .about-text {
+                width: 50%; /* Take up half of the container width */
+                text-align: left; /* Align text to the left */
+            }
+        }
     </style>
 </head>
 <body>
 <div class="pageContent">
     <div class="container">
         <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Header Photo" class="large-photo">
-        <h2 class="about-header">ABOUT VAISNY</h2>
-        <p class="about-text">
-            Here's where you'll introduce Vaisny, offering readers a glimpse into their background, interests, and whatever else you find pertinent. It's a good place to share what makes their story unique, their professional journey, personal philosophies, or even hobbies and interests.
-        </p>
+        <div class="about-text">
+            <h2 class="about-header">ABOUT VAISNY</h2>
+            <p>
+                Here's where you'll introduce Vaisny, offering readers a glimpse into their background, interests, and whatever else you find pertinent. It's a good place to share what makes their story unique, their professional journey, personal philosophies, or even hobbies and interests.
+            </p>
+        </div>
     </div>
 </div>
-    <script>
-        // Function to get URL parameter
-        function getURLParameter(name) {
-            return new URLSearchParams(window.location.search).get(name);
-        }
+<script>
+    // Function to get URL parameter
+    function getURLParameter(name) {
+        return new URLSearchParams(window.location.search).get(name);
+    }
 
-        // Check if the password parameter is correct
-        const password = getURLParameter('password');
-        const correctPassword = 'vm2024'; // Set your password here
+    // Check if the password parameter is correct
+    const password = getURLParameter('password');
+    const correctPassword = 'vm2024'; // Set your password here
 
-        if (password === correctPassword) {
-            // If the password is correct, show the page content
-            document.querySelector('.pageContent').style.display = 'block';
-        } else {
-            // If the password is incorrect, display an access denied message
-            document.body.innerHTML = '<p>Access Denied. You do not have permission to access this page.</p>';
-        }
-    </script>
+    if (password === correctPassword) {
+        // If the password is correct, show the page content
+        document.querySelector('.pageContent').style.display = 'block';
+    } else {
+        // If the password is incorrect, display an access denied message
+        document.body.innerHTML = '<p>Access Denied. You do not have permission to access this page.</p>';
+    }
+</script>
 </body>
 </html>
