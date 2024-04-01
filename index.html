@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Vaisny</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     <style>
         body {
@@ -50,7 +51,14 @@
             height: 70%;
             margin-bottom: 20px; /* Add margin between containers */
         }
-        
+	.buttonDiv {
+	    display: flex;
+	    justify-content: center; /* Align items horizontally */
+
+	}
+	.paddingAdded {
+	    padding:1px;
+	}
         .about-header {
             margin-top: 20px;
             font-size: 36px; /* 1.5 times bigger */
@@ -66,7 +74,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: 200px;
+            margin-bottom: 20px; /* Adjusted margin */
             padding-left: 40px;
             padding-right: 40px;
             font-weight: normal; /* Set font weight to normal */
@@ -100,13 +108,8 @@
                 width: 40%; /* Take up half of the container width */
             }
         }
-        /* Media query for smaller screens */
-        @media only screen and (max-width: 750px) {
-            .about-text {
-                margin-bottom:10px;
-            }
-        }
 
+        
         /* SKILLS Section */
         .skills-container {
             display: flex;
@@ -122,7 +125,7 @@
         }
         
         .skills-header {
-            font-size: 48px; /* Double the font size */
+            font-size: 36px; /* Match the font size of the ABOUT VAISNY header */
             color: #34495e;
             font-weight: normal;
             text-transform: uppercase;
@@ -165,6 +168,15 @@
             <p>
                 Here's where you'll introduce Vaisny, offering readers a glimpse into their background, interests, and whatever else you find pertinent. It's a good place to share what makes their story unique, their professional journey, personal philosophies, or even hobbies and interests.
             </p>
+            <!-- My Resume and Contact Me buttons -->
+            <div class="buttonDiv"> <!-- Added Bootstrap utility classes -->
+		<div class="paddingAdded">
+                     <button type="button" class="btn btn-primary btn-lg">My Resume</button>
+		</div>	
+		<div class="paddingAdded">
+                <button type="button" class="btn btn-primary btn-lg">Contact Me</button>
+		</div>
+            </div>
         </div>
     </div>
     <!-- SKILLS Section -->
