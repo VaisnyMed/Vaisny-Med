@@ -94,8 +94,10 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
             transition: box-shadow 0.5s; /* Smooth transition for box shadow */
-            width: calc(100% - 120px); /* Adjusted width to account for sidebar width */
-            max-width: 800px; /* Added max-width to prevent excessive expansion */
+            width: auto; /* Auto width */
+            min-width: 200px; /* Minimum width for the raised div */
+            background-color: white; /* White background */
+            text-align: center; /* Center-align the content */
         }
         .content-container:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
