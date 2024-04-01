@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <!-- Add favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <style>
+        /* General styles */
         body, html {
             margin: 0;
             padding: 0;
@@ -12,92 +16,96 @@
             height: 100%;
             font-family: Arial, sans-serif;
         }
+
+        /* Sidebar styles */
         .sidebar {
             position: fixed;
             top: 0;
             left: 0;
-            width: 60px; /* Further reduced width */
+            width: 60px;
             height: 100%;
             background-color: #2c3e50;
             transition: width 0.5s;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .sidebar:hover {
             width: 200px;
         }
+
         .profile-img {
-            width: 48px; /* Adjusted for new sidebar width */
-            height: 48px; /* Keep aspect ratio */
-            border-radius: 50%; /* Makes the image circular */
-            display: block;
-            margin: 10px auto;
-            transition: width 0.5s, height 0.5s; /* Smooth transition */
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: width 0.5s, height 0.5s;
         }
+
         .sidebar:hover .profile-img {
-            width: 80px; /* Larger size on hover */
+            width: 80px;
             height: 80px;
         }
+
         .sidebar nav {
-            padding-top: 20px; /* Adjusted padding */
-            position: relative; /* Relative positioning for the nav */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .sidebar nav a {
             color: white;
             text-decoration: none;
-            padding: 10px; /* Adjusted padding for simplicity */
-            display: block; /* Display each link as a block element */
-            transition: padding 0.5s; /* Smooth transition for padding */
-            white-space: nowrap; /* Prevent text wrapping */
-            overflow: hidden; /* Hide overflow */
-            text-overflow: ellipsis; /* Add ellipsis */
+            padding: 10px;
+            transition: padding 0.5s;
         }
+
         .sidebar:hover nav a {
-            padding: 10px 20px; /* Adjusted padding on hover */
+            padding: 10px 20px;
         }
-        .sidebar nav::after {
-            content: '►';
-            font-size: 36px; /* Increased font size for the arrow */
-            color: white;
-            position: absolute;
-            bottom: -40px; /* Adjusted position to be below the links */
-            left: 50%;
-            transform: translateX(-50%);
-            transition: transform 0.5s; /* Smooth transition for arrow position */
-            cursor: pointer; /* Add pointer cursor to indicate clickable */
-        }
-        .sidebar:hover nav::after {
-            transform: translateX(-50%) rotate(180deg); /* Rotate arrow on hover */
-        }
+
+        /* Main content styles */
         .main-content {
-            margin-left: 60px; /* Adjusted for initial sidebar width */
+            margin-left: 60px;
             padding: 20px;
             transition: margin-left 0.5s;
         }
+
         .sidebar:hover + .main-content {
-            margin-left: 200px; /* Adjusted for expanded sidebar width */
+            margin-left: 200px;
         }
+
+        /* Section styles */
         h2 {
             border-bottom: 1px solid #bdc3c7;
             padding-bottom: 10px;
             color: #34495e;
-            text-align: center; /* Center-align h2 elements */
+            text-align: center;
         }
+
         p {
-            text-align: center; /* Center-align paragraphs */
+            text-align: center;
             text-justify: inter-word;
         }
-        /* New styles for the image section */
+
+        /* Image section styles */
         .image-section {
             padding: 20px;
             text-align: center;
         }
+
         .image-container {
-            width: 200px; /* Adjust width as needed */
-            height: 200px; /* Adjust height as needed */
-            border-radius: 20px; /* Rounded edges */
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
             overflow: hidden;
-            margin: 0 auto 20px; /* Center horizontally and add bottom margin */
+            margin: 0 auto 20px;
         }
+
         .image-container img {
             width: 100%;
             height: auto;
@@ -106,78 +114,78 @@
 </head>
 <body>
 <div class="pageContent">
-<div class="sidebar">
-    <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Profile Picture" class="profile-img">
-    <nav>
-        <a href="#personal-information">Personal Information</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#interests">Interests</a>
-    </nav>
-    <div class="arrow"></div>
-</div>
+    <div class="sidebar">
+        <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Profile Picture" class="profile-img">
+        <nav>
+            <a href="#personal-information">Personal Information</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#interests">Interests</a>
+        </nav>
+        <div class="arrow"></div>
+    </div>
 
-<!-- New section for the image -->
-<div class="main-content">
-    <section class="image-section">
-        <div class="image-container">
-            <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Profile Picture">
-        </div>
-    </section>
+    <!-- New section for the image -->
+    <div class="main-content">
+        <section class="image-section">
+            <div class="image-container">
+                <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Profile Picture">
+            </div>
+        </section>
 
-    <!-- Original sections -->
-    <section id="personal-information">
-        <h2>Personal Information</h2>
-        <p>Cillum aute velit nulla nulla ad exercitation Lorem. Ex sint in qui ea.
-            Laboris voluptate non ipsum dolor irure eu ea adipisicing. 
-            Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing..</p>
-        <ul>
-          <li>List item 1</li>
-          <li>List item 2</li>
-          <li>List item 3</li>
-        </ul>
-    </section>
-    <section id="education">
-        <h2>Education</h2>
-        <p>Cillum aute velit nulla nulla ad exercitation Lorem.
-            Ex sint in qui ea. Laboris voluptate non ipsum dolor irure eu ea adipisicing.
-            Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing.</p>
-    </section>
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>Content goes here...</p>
-    </section>
-    <section id="achievements">
-        <h2>Achievements</h2>
-        <p>Content goes here...</p>
-    </section>
-    <section id="interests">
-        <h2>Personal Interests</h2>
-        <p>Content goes here...</p>
-    </section>
-</div>
+        <!-- Original sections -->
+        <section id="personal-information">
+            <h2>Personal Information</h2>
+            <p>Cillum aute velit nulla nulla ad exercitation Lorem. Ex sint in qui ea.
+                Laboris voluptate non ipsum dolor irure eu ea adipisicing. 
+                Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing..</p>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+                <li>List item 3</li>
+            </ul>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>Cillum aute velit nulla nulla ad exercitation Lorem.
+                Ex sint in qui ea. Laboris voluptate non ipsum dolor irure eu ea adipisicing.
+                Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing.</p>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <p>Content goes here...</p>
+        </section>
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <p>Content goes here...</p>
+        </section>
+        <section id="interests">
+            <h2>Personal Interests</h2>
+            <p>Content goes here...</p>
+        </section>
+    </div>
 </div>
 
 <script>
-        // Function to get URL parameters
-        function getURLParameter(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.has(name) ? urlParams.get(name) : null;
-        }
+    // Function to get URL parameters
+    function getURLParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.has(name) ? urlParams.get(name) : null;
+    }
 
-        // Check if the password parameter is correct
-        const password = getURLParameter('password');
-        const correctPassword = 'vm2024'; // Set your password here
+    // Check if the password parameter is correct
+    const password = getURLParameter('password');
+    const correctPassword = 'vm2024'; // Set your password here
 
-        if (password === correctPassword) {
-            // If the password is correct, show the page content
-            document.getElementById('pageContent').style.display = 'block';
-        } else {
-            // If the password is incorrect, you can redirect or ask for the password
-            document.body.innerHTML = '<p>Access denied. You must provide a correct password.</p>';
-            // Or redirect: window.location.href = 'login_page.html';
-        }
+    if (password === correctPassword) {
+        // If the password is correct, show the page content
+        document.querySelector('.pageContent').style.display = 'block';
+    } else {
+        // If the password is incorrect, you can redirect or ask for the password
+        document.body.innerHTML = '<p style="text-align: center; margin-top: 20px;">Access denied. You must provide a correct password.</p>';
+        // Or redirect: window.location.href = 'login_page.html';
+    }
 </script>
 
 </body>
