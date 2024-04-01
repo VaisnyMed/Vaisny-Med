@@ -33,9 +33,14 @@
             }
         }
         .container {
-            text-align: center;
-            margin: 20px auto; /* Center the container horizontally and add top/bottom margin */
-            padding: 10px; /* Add padding */
+            margin: auto;
+            display: flex;
+            align-items: center; /* Align items vertically */
+            justify-content: center; /* Align items horizontally */
+            flex-direction: column; /* Arrange children vertically */
+            max-width: 1000px;
+            height: 70%;
+            margin-bottom: 20px; /* Add margin between containers */
         }
         .about-header {
             margin-top: 20px;
@@ -46,37 +51,94 @@
             letter-spacing: 2px; /* Add letter spacing */
         }
         .about-text {
-            margin-top: 10px;
             text-align: left; /* Left align the text */
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 200px;
+            padding-left: 40px;
+            padding-right: 40px;
             font-weight: normal; /* Set font weight to normal */
+            align-self: center; /* Vertically align the text */
         }
         .large-photo {
             width: 100%; /* Adjust this as needed */
-            max-width: 600px; /* Keeps the image from becoming too large */
+            max-width: 700px; /* Keeps the image from becoming too large */
             height: auto; /* Maintain aspect ratio */
             border-radius: 8px; /* Optional: Adds rounded corners to the image */
             display: block;
         }
 
         /* Media query for larger screens */
-        @media only screen and (min-width: 601px) {
+        @media only screen and (min-width: 750px) {
             .container {
-                display: flex; /* Use flexbox for layout */
-                justify-content: center; /* Center horizontally */
+                flex-direction: row; /* Arrange children horizontally */
                 align-items: flex-start; /* Align items to the top */
-                margin: 20px auto; /* Center the container horizontally and add top/bottom margin */
-                padding: 10px; /* Add padding */
+                padding: 20px; /* Add padding */
             }
             .large-photo {
-                width: 50%; /* Take up half of the container width */
+                width: 60%; /* Take up half of the container width */
+                max-width: 700px; /* Keeps the image from becoming too large */
                 margin-right: 20px; /* Add space between photo and text */
+                padding: 10px;
             }
             .about-text {
-                width: 50%; /* Take up half of the container width */
+                width: 40%; /* Take up half of the container width */
             }
+        }
+/* Media query for larger screens */
+        @media only screen and (max-width: 850px) {
+         .about-text {
+            text-align: left; /* Left align the text */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            padding-left: 40px;
+            padding-right: 40px;
+            font-weight: normal; /* Set font weight to normal */
+            align-self: center; /* Vertically align the text */
+        }
+           
+        }
+
+        /* SKILLS Section */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin-top: 20px;
+	    margin:auto;
+	    padding-left:20px;
+	    padding-right:20px;
+text-align : center;
+        }
+        .skills-header {
+            font-size: 24px;
+            color: #34495e;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .skills-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .skill {
+            width: 30%;
+            padding: 20px;
+            text-align: center; /* Center-align the text */
+        }
+        .skill ul {
+            text-align: center; /* Center-align the list */
+            padding-left: 0; /* Remove default left padding */
+            list-style: none; /* Remove default list styles */
+        }
+        .skill ul li {
+            text-align: center; /* Center-align the list items */
         }
     </style>
 </head>
@@ -89,6 +151,36 @@
             <p>
                 Here's where you'll introduce Vaisny, offering readers a glimpse into their background, interests, and whatever else you find pertinent. It's a good place to share what makes their story unique, their professional journey, personal philosophies, or even hobbies and interests.
             </p>
+        </div>
+    </div>
+    <!-- SKILLS Section -->
+    <div class="skills-container">
+        <h2 class="skills-header">SKILLS</h2>
+        <div class="skills-row">
+            <div class="skill">
+                <h3>Skill 1</h3>
+                <ul>
+                    <li>Sub-skill 1</li>
+                    <li>Sub-skill 2</li>
+                    <li>Sub-skill 3</li>
+                </ul>
+            </div>
+            <div class="skill">
+                <h3>Skill 2</h3>
+                <ul>
+                    <li>Sub-skill 1</li>
+                    <li>Sub-skill 2</li>
+                    <li>Sub-skill 3</li>
+                </ul>
+            </div>
+            <div class="skill">
+                <h3>Skill 3</h3>
+                <ul>
+                    <li>Sub-skill 1</li>
+                    <li>Sub-skill 2</li>
+                    <li>Sub-skill 3</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
