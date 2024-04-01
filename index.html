@@ -46,13 +46,14 @@
             text-decoration: none;
             padding: 10px; /* Adjusted padding for simplicity */
             display: block; /* Display each link as a block element */
-            transition: padding 0.5s; /* Smooth transition for padding */
+            transition: padding 0.5s, background-color 0.5s; /* Smooth transition for padding and background-color */
             white-space: nowrap; /* Prevent text wrapping */
             overflow: hidden; /* Hide overflow */
             text-overflow: ellipsis; /* Add ellipsis */
         }
-        .sidebar:hover nav a {
-            padding: 10px 20px; /* Adjusted padding on hover */
+        .sidebar nav a:hover {
+            padding-left: 20px; /* Adjust padding on hover */
+            background-color: #34495e; /* Change background color on hover */
         }
         .sidebar nav::after {
             content: '►';
@@ -80,27 +81,19 @@
             border-bottom: 1px solid #bdc3c7;
             padding-bottom: 10px;
             color: #34495e;
-            text-align: center; /* Center-align h2 elements */
         }
         p {
-            text-align: center; /* Center-align paragraphs */
+            text-align: justify;
             text-justify: inter-word;
         }
-        /* New styles for the image section */
-        .image-section {
+        .content-container {
+            margin-left: 280px; /* Adjusted to account for sidebar width */
             padding: 20px;
-            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
+            transition: box-shadow 0.5s; /* Smooth transition for box shadow */
         }
-        .image-container {
-            width: 200px; /* Adjust width as needed */
-            height: 200px; /* Adjust height as needed */
-            border-radius: 20px; /* Rounded edges */
-            overflow: hidden;
-            margin: 0 auto 20px; /* Center horizontally and add bottom margin */
-        }
-        .image-container img {
-            width: 100%;
-            height: auto;
+        .content-container:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
         }
     </style>
 </head>
@@ -122,40 +115,42 @@
 <div class="main-content">
     <section class="image-section">
         <div class="image-container">
-            <img src="https://example.com/your-large-square-image.jpg" alt="Large Square Image">
+            <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Profile Picture">
         </div>
     </section>
 
     <!-- Original sections -->
-    <section id="personal-information">
-        <h2>Personal Information</h2>
-        <p>Cillum aute velit nulla nulla ad exercitation Lorem. Ex sint in qui ea.
-            Laboris voluptate non ipsum dolor irure eu ea adipisicing. 
-            Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing..</p>
-        <ul>
-          <li>List item 1</li>
-          <li>List item 2</li>
-          <li>List item 3</li>
-        </ul>
-    </section>
-    <section id="education">
-        <h2>Education</h2>
-        <p>Cillum aute velit nulla nulla ad exercitation Lorem.
-            Ex sint in qui ea. Laboris voluptate non ipsum dolor irure eu ea adipisicing.
-            Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing.</p>
-    </section>
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>Content goes here...</p>
-    </section>
-    <section id="achievements">
-        <h2>Achievements</h2>
-        <p>Content goes here...</p>
-    </section>
-    <section id="interests">
-        <h2>Personal Interests</h2>
-        <p>Content goes here...</p>
-    </section>
+    <div class="content-container">
+        <section id="personal-information">
+            <h2>Personal Information</h2>
+            <p>Cillum aute velit nulla nulla ad exercitation Lorem. Ex sint in qui ea.
+                Laboris voluptate non ipsum dolor irure eu ea adipisicing. 
+                Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing..</p>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+                <li>List item 3</li>
+            </ul>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>Cillum aute velit nulla nulla ad exercitation Lorem.
+                Ex sint in qui ea. Laboris voluptate non ipsum dolor irure eu ea adipisicing.
+                Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing.</p>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <p>Content goes here...</p>
+        </section>
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <p>Content goes here...</p>
+        </section>
+        <section id="interests">
+            <h2>Personal Interests</h2>
+            <p>Content goes here...</p>
+        </section>
+    </div>
 </div>
 </div>
 
