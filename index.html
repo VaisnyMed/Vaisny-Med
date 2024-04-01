@@ -74,8 +74,10 @@
             padding: 20px;
             transition: margin-left 0.5s;
             display: flex; /* Enable flexbox */
-            justify-content: center; /* Center-align content horizontally */
-            align-items: center; /* Center-align content vertically */
+            flex-direction: column; /* Set flex direction to column */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            height: 100vh; /* Expand main content to fill available height */
         }
         .sidebar:hover + .main-content {
             margin-left: 200px; /* Adjusted for expanded sidebar width */
