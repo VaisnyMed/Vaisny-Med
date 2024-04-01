@@ -14,33 +14,30 @@
             font-family: 'Roboto', sans-serif;
             background-color: rgba(144,144,144,0.1); /* Set background color with reduced opacity */
             opacity: 0; /* Initially set opacity to 0 */
-            animation: fadeInRight 1s ease-in forwards; /* Apply fade-in animation */
+            animation: fadeIn 1s ease-out forwards, slideIn 1s ease-out forwards; /* Apply fade-in and slide-in animations */
         }
         
         /* Fade-in animation */
-        @keyframes fadeInRight {
+        @keyframes fadeIn {
             0% {
                 opacity: 0; /* Start with opacity 0 */
+            }
+            50% {
+                opacity: 0.5; /* Fade in halfway */
             }
             100% {
                 opacity: 1; /* End with opacity 1 */
             }
         }
-        
-        /* Slide-in from right animation */
-        @keyframes slideInRight {
+
+        /* Slide-in animation */
+        @keyframes slideIn {
             0% {
-                transform: translateX(100%); /* Start off-screen to the right */
+                transform: translateY(-50px); /* Start 50px above */
             }
             100% {
-                transform: translateX(0); /* End at the original position */
+                transform: translateY(0); /* End at original position */
             }
-        }
-
-        /* Apply slide-in animation with delays and durations */
-        .slide-in {
-            animation: slideInRight 0.75s ease-in forwards, fadeInRight 0.75s ease-in forwards; /* Apply fade-in and slide-in animations */
-            animation-delay: 0.2s;
         }
 
         .container {
@@ -61,7 +58,6 @@
             font-weight: normal; /* Set font weight to normal */
             text-transform: uppercase; /* Convert text to uppercase */
             letter-spacing: 2px; /* Add letter spacing */
-            animation: slideInRight 0.75s ease-in forwards, fadeInRight 0.75s ease-in forwards; /* Apply fade-in and slide-in animations */
             animation-delay: 0.4s;
         }
         
@@ -75,7 +71,6 @@
             padding-right: 40px;
             font-weight: normal; /* Set font weight to normal */
             align-self: center; /* Vertically align the text */
-            animation: slideInRight 0.75s ease-in forwards, fadeInRight 0.75s ease-in forwards; /* Apply fade-in and slide-in animations */
             animation-delay: 0.6s;
         }
         
@@ -85,7 +80,6 @@
             height: auto; /* Maintain aspect ratio */
             border-radius: 8px; /* Optional: Adds rounded corners to the image */
             display: block;
-            animation: slideInRight 0.75s ease-in forwards, fadeInRight 0.75s ease-in forwards; /* Apply fade-in and slide-in animations */
             animation-delay: 0.8s;
         }
 
@@ -114,10 +108,11 @@
             align-items: center;
             width: 80%;
             margin-top: 20px;
-	    margin:auto;
-	    padding-left:20px;
-	    padding-right:20px;
+            margin:auto;
+            padding-left:20px;
+            padding-right:20px;
             text-align: center;
+            animation-delay: 1s;
         }
         
         .skills-header {
@@ -127,22 +122,21 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 20px;
-            animation: slideInRight 0.75s ease-in forwards, fadeInRight 0.75s ease-in forwards; /* Apply fade-in and slide-in animations */
-            animation-delay: 1s;
+            animation-delay: 1.2s;
         }
         
         .skills-row {
             display: flex;
             justify-content: space-between;
             width: 100%;
+            animation-delay: 1.4s;
         }
         
         .skill {
             width: 30%;
             padding: 20px;
             text-align: center; /* Center-align the text */
-            animation: slideInRight 0.75s ease-in forwards, fadeInRight 0.75s ease-in forwards; /* Apply fade-in and slide-in animations */
-            animation-delay: 1.2s;
+            animation-delay: 1.6s;
         }
         
         .skill ul {
@@ -158,7 +152,7 @@
 </head>
 <body>
 <div class="pageContent">
-    <div class="container slide-in">
+    <div class="container">
         <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Header Photo" class="large-photo">
         <div class="about-text">
             <h2 class="about-header">ABOUT VAISNY</h2>
@@ -168,7 +162,7 @@
         </div>
     </div>
     <!-- SKILLS Section -->
-    <div class="skills-container slide-in">
+    <div class="skills-container">
         <h2 class="skills-header">SKILLS</h2>
         <div class="skills-row">
             <div class="skill">
@@ -210,7 +204,7 @@
 
     if (password === correctPassword) {
         // If the password is correct, show the page content
-        document.querySelector('.pageContent').style.display = 'block';
+        document.querySelector('.pageContent').style.opacity = '1';
     } else {
         // If the password is incorrect, display an access denied message
         document.body.innerHTML = '<p>Access Denied. You do not have permission to access this page.</p>';
