@@ -73,6 +73,9 @@
             margin-left: 60px; /* Adjusted for initial sidebar width */
             padding: 20px;
             transition: margin-left 0.5s;
+            display: flex; /* Enable flexbox */
+            justify-content: center; /* Center-align content horizontally */
+            align-items: center; /* Center-align content vertically */
         }
         .sidebar:hover + .main-content {
             margin-left: 200px; /* Adjusted for expanded sidebar width */
@@ -81,24 +84,26 @@
             border-bottom: 1px solid #bdc3c7;
             padding-bottom: 10px;
             color: #34495e;
+            text-align: center; /* Center-align headers */
         }
-        p {
-            text-align: justify;
+        p, ul {
+            text-align: center; /* Center-align paragraphs and lists */
             text-justify: inter-word;
         }
         .content-container {
-            margin: 0 auto; /* Center align the content container */
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
             transition: box-shadow 0.5s; /* Smooth transition for box shadow */
+            max-width: 400px; /* Set max width for the raised div */
+            background-color: white; /* Set background color */
         }
         .content-container:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
         }
         .large-profile-picture {
             width: 100%; /* Adjusted width */
-            height: auto; /* Adjusted height */
-            max-width: 400px; /* Maximum width of 400px */
+            max-width: 400px; /* Set max width */
+            height: auto;
             border-radius: 20px; /* Rounded edges */
             overflow: hidden;
             margin: 0 auto 20px; /* Center horizontally and add bottom margin */
