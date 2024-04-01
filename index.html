@@ -46,14 +46,13 @@
             text-decoration: none;
             padding: 10px; /* Adjusted padding for simplicity */
             display: block; /* Display each link as a block element */
-            transition: padding 0.5s, background-color 0.5s; /* Smooth transition for padding and background-color */
+            transition: padding 0.5s; /* Smooth transition for padding */
             white-space: nowrap; /* Prevent text wrapping */
             overflow: hidden; /* Hide overflow */
             text-overflow: ellipsis; /* Add ellipsis */
         }
-        .sidebar nav a:hover {
-            padding-left: 20px; /* Adjust padding on hover */
-            background-color: #34495e; /* Change background color on hover */
+        .sidebar:hover nav a {
+            padding: 10px 20px; /* Adjusted padding on hover */
         }
         .sidebar nav::after {
             content: '►';
@@ -73,43 +72,33 @@
             margin-left: 60px; /* Adjusted for initial sidebar width */
             padding: 20px;
             transition: margin-left 0.5s;
-            background-color: #f2f2f2; /* Background color for main content */
-            width: calc(100% - 60px); /* Adjusted width to account for sidebar width */
         }
         .sidebar:hover + .main-content {
             margin-left: 200px; /* Adjusted for expanded sidebar width */
-            width: calc(100% - 200px); /* Adjusted width to account for expanded sidebar width */
         }
         h2 {
             border-bottom: 1px solid #bdc3c7;
             padding-bottom: 10px;
             color: #34495e;
+            text-align: center; /* Center-align h2 elements */
         }
         p {
-            text-align: justify;
+            text-align: center; /* Center-align paragraphs */
             text-justify: inter-word;
         }
-        .content-container {
-            margin: 0 auto; /* Center align the content container */
+        /* New styles for the image section */
+        .image-section {
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
-            transition: box-shadow 0.5s; /* Smooth transition for box shadow */
-            width: auto; /* Auto width */
-            min-width: 200px; /* Minimum width for the raised div */
-            background-color: white; /* White background */
-            text-align: center; /* Center-align the content */
+            text-align: center;
         }
-        .content-container:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
-        }
-        .large-profile-picture {
-            width: 200px; /* Adjusted width */
-            height: 200px; /* Adjusted height */
+        .image-container {
+            width: 200px; /* Adjust width as needed */
+            height: 200px; /* Adjust height as needed */
             border-radius: 20px; /* Rounded edges */
             overflow: hidden;
             margin: 0 auto 20px; /* Center horizontally and add bottom margin */
         }
-        .large-profile-picture img {
+        .image-container img {
             width: 100%;
             height: auto;
         }
@@ -131,66 +120,64 @@
 
 <!-- New section for the image -->
 <div class="main-content">
-    <div class="content-container">
-        <section class="image-section">
-            <div class="large-profile-picture">
-                <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Profile Picture">
-            </div>
-        </section>
+    <section class="image-section">
+        <div class="image-container">
+            <img src="https://example.com/your-large-square-image.jpg" alt="Large Square Image">
+        </div>
+    </section>
 
-        <!-- Original sections -->
-        <section id="personal-information">
-            <h2>Personal Information</h2>
-            <p>Cillum aute velit nulla nulla ad exercitation Lorem. Ex sint in qui ea.
-                Laboris voluptate non ipsum dolor irure eu ea adipisicing. 
-                Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing..</p>
-            <ul>
-                <li>List item 1</li>
-                <li>List item 2</li>
-                <li>List item 3</li>
-            </ul>
-        </section>
-        <section id="education">
-            <h2>Education</h2>
-            <p>Cillum aute velit nulla nulla ad exercitation Lorem.
-                Ex sint in qui ea. Laboris voluptate non ipsum dolor irure eu ea adipisicing.
-                Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing.</p>
-        </section>
-        <section id="experience">
-            <h2>Experience</h2>
-            <p>Content goes here...</p>
-        </section>
-        <section id="achievements">
-            <h2>Achievements</h2>
-            <p>Content goes here...</p>
-        </section>
-        <section id="interests">
-            <h2>Personal Interests</h2>
-            <p>Content goes here...</p>
-        </section>
-    </div>
+    <!-- Original sections -->
+    <section id="personal-information">
+        <h2>Personal Information</h2>
+        <p>Cillum aute velit nulla nulla ad exercitation Lorem. Ex sint in qui ea.
+            Laboris voluptate non ipsum dolor irure eu ea adipisicing. 
+            Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing..</p>
+        <ul>
+          <li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>
+        </ul>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <p>Cillum aute velit nulla nulla ad exercitation Lorem.
+            Ex sint in qui ea. Laboris voluptate non ipsum dolor irure eu ea adipisicing.
+            Occaecat officia deserunt laboris proident consequat ad. Do aute Lorem aliqua nisi est enim velit adipisicing.</p>
+    </section>
+    <section id="experience">
+        <h2>Experience</h2>
+        <p>Content goes here...</p>
+    </section>
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <p>Content goes here...</p>
+    </section>
+    <section id="interests">
+        <h2>Personal Interests</h2>
+        <p>Content goes here...</p>
+    </section>
 </div>
 </div>
 
 <script>
-    // Function to get URL parameters
-    function getURLParameter(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.has(name) ? urlParams.get(name) : null;
-    }
+        // Function to get URL parameters
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.has(name) ? urlParams.get(name) : null;
+        }
 
-    // Check if the password parameter is correct
-    const password = getURLParameter('password');
-    const correctPassword = 'vm2024'; // Set your password here
+        // Check if the password parameter is correct
+        const password = getURLParameter('password');
+        const correctPassword = 'vm2024'; // Set your password here
 
-    if (password === correctPassword) {
-        // If the password is correct, show the page content
-        document.getElementById('pageContent').style.display = 'block';
-    } else {
-        // If the password is incorrect, you can redirect or ask for the password
-        document.body.innerHTML = '<p>Access denied. You must provide a correct password.</p>';
-        // Or redirect: window.location.href = 'login_page.html';
-    }
+        if (password === correctPassword) {
+            // If the password is correct, show the page content
+            document.getElementById('pageContent').style.display = 'block';
+        } else {
+            // If the password is incorrect, you can redirect or ask for the password
+            document.body.innerHTML = '<p>Access denied. You must provide a correct password.</p>';
+            // Or redirect: window.location.href = 'login_page.html';
+        }
 </script>
 
 </body>
