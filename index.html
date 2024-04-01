@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- Add favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
     <style>
-        /* General styles */
         body, html {
             margin: 0;
             padding: 0;
@@ -16,125 +12,115 @@
             height: 100%;
             font-family: Arial, sans-serif;
         }
-
-        /* Sidebar styles */
         .sidebar {
             position: fixed;
             top: 0;
             left: 0;
-            width: 60px;
+            width: 60px; /* Further reduced width */
             height: 100%;
             background-color: #2c3e50;
             transition: width 0.5s;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
-
         .sidebar:hover {
             width: 200px;
         }
-
         .profile-img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            transition: width 0.5s, height 0.5s;
+            width: 48px; /* Adjusted for new sidebar width */
+            height: 48px; /* Keep aspect ratio */
+            border-radius: 50%; /* Makes the image circular */
+            display: block;
+            margin: 10px auto;
+            transition: width 0.5s, height 0.5s; /* Smooth transition */
         }
-
         .sidebar:hover .profile-img {
-            width: 80px;
+            width: 80px; /* Larger size on hover */
             height: 80px;
         }
-
         .sidebar nav {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding-top: 20px; /* Adjusted padding */
+            position: relative; /* Relative positioning for the nav */
         }
-
         .sidebar nav a {
             color: white;
             text-decoration: none;
-            padding: 10px;
-            transition: padding 0.5s;
+            padding: 10px; /* Adjusted padding for simplicity */
+            display: block; /* Display each link as a block element */
+            transition: padding 0.5s, background-color 0.5s; /* Smooth transition for padding and background-color */
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Add ellipsis */
         }
-
-        .sidebar:hover nav a {
-            padding: 10px 20px;
+        .sidebar nav a:hover {
+            padding-left: 20px; /* Adjust padding on hover */
+            background-color: #34495e; /* Change background color on hover */
         }
-
-        /* Main content styles */
+        .sidebar nav::after {
+            content: '►';
+            font-size: 36px; /* Increased font size for the arrow */
+            color: white;
+            position: absolute;
+            bottom: -40px; /* Adjusted position to be below the links */
+            left: 50%;
+            transform: translateX(-50%);
+            transition: transform 0.5s; /* Smooth transition for arrow position */
+            cursor: pointer; /* Add pointer cursor to indicate clickable */
+        }
+        .sidebar:hover nav::after {
+            transform: translateX(-50%) rotate(180deg); /* Rotate arrow on hover */
+        }
         .main-content {
-            margin-left: 60px;
+            margin-left: 60px; /* Adjusted for initial sidebar width */
             padding: 20px;
             transition: margin-left 0.5s;
         }
-
         .sidebar:hover + .main-content {
-            margin-left: 200px;
+            margin-left: 200px; /* Adjusted for expanded sidebar width */
         }
-
-        /* Section styles */
         h2 {
             border-bottom: 1px solid #bdc3c7;
             padding-bottom: 10px;
             color: #34495e;
-            text-align: center;
         }
-
         p {
-            text-align: center;
+            text-align: justify;
             text-justify: inter-word;
         }
-
-        /* Image section styles */
-        .image-section {
+        .content-container {
+            margin-left: 280px; /* Adjusted to account for sidebar width */
             padding: 20px;
-            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
+            transition: box-shadow 0.5s; /* Smooth transition for box shadow */
         }
-
-        .image-container {
-            width: 200px;
-            height: 200px;
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 0 auto 20px;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
+        .content-container:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
         }
     </style>
 </head>
 <body>
 <div class="pageContent">
-    <div class="sidebar">
-        <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Profile Picture" class="profile-img">
-        <nav>
-            <a href="#personal-information">Personal Information</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#interests">Interests</a>
-        </nav>
-        <div class="arrow"></div>
-    </div>
+<div class="sidebar">
+    <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Profile Picture" class="profile-img">
+    <nav>
+        <a href="#personal-information">Personal Information</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#interests">Interests</a>
+    </nav>
+    <div class="arrow"></div>
+</div>
 
-    <!-- New section for the image -->
-    <div class="main-content">
-        <section class="image-section">
-            <div class="image-container">
-                <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Profile Picture">
-            </div>
-        </section>
+<!-- New section for the image -->
+<div class="main-content">
+    <section class="image-section">
+        <div class="image-container">
+            <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Profile Picture">
+        </div>
+    </section>
 
-        <!-- Original sections -->
+    <!-- Original sections -->
+    <div class="content-container">
         <section id="personal-information">
             <h2>Personal Information</h2>
             <p>Cillum aute velit nulla nulla ad exercitation Lorem. Ex sint in qui ea.
@@ -166,26 +152,27 @@
         </section>
     </div>
 </div>
+</div>
 
 <script>
-    // Function to get URL parameters
-    function getURLParameter(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.has(name) ? urlParams.get(name) : null;
-    }
+        // Function to get URL parameters
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.has(name) ? urlParams.get(name) : null;
+        }
 
-    // Check if the password parameter is correct
-    const password = getURLParameter('password');
-    const correctPassword = 'vm2024'; // Set your password here
+        // Check if the password parameter is correct
+        const password = getURLParameter('password');
+        const correctPassword = 'vm2024'; // Set your password here
 
-    if (password === correctPassword) {
-        // If the password is correct, show the page content
-        document.querySelector('.pageContent').style.display = 'block';
-    } else {
-        // If the password is incorrect, you can redirect or ask for the password
-        document.body.innerHTML = '<p style="text-align: center; margin-top: 20px;">Access denied. You must provide a correct password.</p>';
-        // Or redirect: window.location.href = 'login_page.html';
-    }
+        if (password === correctPassword) {
+            // If the password is correct, show the page content
+            document.getElementById('pageContent').style.display = 'block';
+        } else {
+            // If the password is incorrect, you can redirect or ask for the password
+            document.body.innerHTML = '<p>Access denied. You must provide a correct password.</p>';
+            // Or redirect: window.location.href = 'login_page.html';
+        }
 </script>
 
 </body>
