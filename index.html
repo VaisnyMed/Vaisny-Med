@@ -46,8 +46,7 @@
         }
         .about-text {
             margin-top: 10px;
-            text-align: justify;
-            text-justify: inter-word;
+            text-align: left; /* Left align the text */
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -63,13 +62,6 @@
             display: block;
         }
 
-        /* Media query for smaller screens */
-        @media only screen and (max-width: 600px) {
-            .large-photo {
-                margin-bottom: 20px; /* Add space between photo and text */
-            }
-        }
-
         /* Media query for larger screens */
         @media only screen and (min-width: 601px) {
             .container {
@@ -83,7 +75,6 @@
             }
             .about-text {
                 width: 50%; /* Take up half of the container width */
-                text-align: left; /* Align text to the left */
             }
         }
     </style>
