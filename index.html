@@ -51,14 +51,16 @@
             height: 70%;
             margin-bottom: 20px; /* Add margin between containers */
         }
-	.buttonDiv {
-	    display: flex;
-	    justify-content: center; /* Align items horizontally */
 
-	}
-	.paddingAdded {
-	    padding:1px;
-	}
+        .buttonDiv {
+            display: flex;
+            justify-content: center; /* Align items horizontally */
+        }
+
+        .paddingAdded {
+            padding: 1px;
+        }
+        
         .about-header {
             margin-top: 20px;
             font-size: 36px; /* 1.5 times bigger */
@@ -109,7 +111,6 @@
             }
         }
 
-        
         /* SKILLS Section */
         .skills-container {
             display: flex;
@@ -170,12 +171,12 @@
             </p>
             <!-- My Resume and Contact Me buttons -->
             <div class="buttonDiv"> <!-- Added Bootstrap utility classes -->
-		<div class="paddingAdded">
-                     <button type="button" class="btn btn-primary btn-lg">My Resume</button>
-		</div>	
-		<div class="paddingAdded">
-                <button type="button" class="btn btn-primary btn-lg">Contact Me</button>
-		</div>
+                <div class="paddingAdded">
+                    <button id="resumeButton" type="button" class="btn btn-primary btn-lg">My Resume</button>
+                </div>  
+                <div class="paddingAdded">
+                    <button id="contactButton" type="button" class="btn btn-primary btn-lg">Contact Me</button>
+                </div>
             </div>
         </div>
     </div>
@@ -227,6 +228,19 @@
         // If the password is incorrect, display an access denied message
         document.body.innerHTML = '<p>Access Denied. You do not have permission to access this page.</p>';
     }
+
+    // Add event listeners for buttons
+    document.getElementById('resumeButton').addEventListener('click', function() {
+        // Add functionality to download resume
+        // Example: window.open('resume.pdf', '_blank'); // Opens in a new tab
+        console.log('Resume button clicked');
+    });
+
+    document.getElementById('contactButton').addEventListener('click', function() {
+        // Add functionality to contact
+        // Example: window.location.href = 'mailto:email@example.com'; // Opens default mail client
+        console.log('Contact button clicked');
+    });
 </script>
 </body>
 </html>
