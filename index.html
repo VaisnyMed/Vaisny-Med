@@ -85,6 +85,22 @@
             text-align: justify;
             text-justify: inter-word;
         }
+        /* New styles for the image section */
+        .image-section {
+            padding: 20px;
+            text-align: center;
+        }
+        .image-container {
+            width: 200px; /* Adjust width as needed */
+            height: 200px; /* Adjust height as needed */
+            border-radius: 20px; /* Rounded edges */
+            overflow: hidden;
+            margin: 0 auto 20px; /* Center horizontally and add bottom margin */
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -101,7 +117,15 @@
     <div class="arrow"></div>
 </div>
 
+<!-- New section for the image -->
 <div class="main-content">
+    <section class="image-section">
+        <div class="image-container">
+            <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="large Profile Picture">
+        </div>
+    </section>
+
+    <!-- Original sections -->
     <section id="personal-information">
         <h2>Personal Information</h2>
         <p>Cillum aute velit nulla nulla ad exercitation Lorem. Ex sint in qui ea.
@@ -133,6 +157,7 @@
     </section>
 </div>
 </div>
+
 <script>
         // Function to get URL parameters
         function getURLParameter(name) {
@@ -153,6 +178,5 @@
             // Or redirect: window.location.href = 'login_page.html';
         }
     </script>
-
 </body>
 </html>
