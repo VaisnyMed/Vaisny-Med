@@ -87,13 +87,24 @@
             text-justify: inter-word;
         }
         .content-container {
-            margin-left: 280px; /* Adjusted to account for sidebar width */
+            margin: 0 auto; /* Center align the content container */
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
             transition: box-shadow 0.5s; /* Smooth transition for box shadow */
         }
         .content-container:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+        }
+        .large-profile-picture {
+            width: 200px; /* Adjusted width */
+            height: 200px; /* Adjusted height */
+            border-radius: 20px; /* Rounded edges */
+            overflow: hidden;
+            margin: 0 auto 20px; /* Center horizontally and add bottom margin */
+        }
+        .large-profile-picture img {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -113,14 +124,14 @@
 
 <!-- New section for the image -->
 <div class="main-content">
-    <section class="image-section">
-        <div class="image-container">
-            <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Profile Picture">
-        </div>
-    </section>
-
-    <!-- Original sections -->
     <div class="content-container">
+        <section class="image-section">
+            <div class="large-profile-picture">
+                <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Profile Picture">
+            </div>
+        </section>
+
+        <!-- Original sections -->
         <section id="personal-information">
             <h2>Personal Information</h2>
             <p>Cillum aute velit nulla nulla ad exercitation Lorem. Ex sint in qui ea.
