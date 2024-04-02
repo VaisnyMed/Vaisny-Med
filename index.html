@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Vaisny</title>
+    <title>About Vaisny Balamurali</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     <style>
@@ -51,6 +51,16 @@
             height: 70%;
             margin-bottom: 20px; /* Add margin between containers */
         }
+	.container2{
+	    margin: auto;
+            display: flex;
+            align-items: center; /* Align items vertically */
+            justify-content: center; /* Align items horizontally */
+            flex-direction: column; /* Arrange children vertically */
+            max-width: 1000px;
+            height: 70%;
+            margin-bottom: 15px; /* Add margin between containers */
+	}
 
         .buttonDiv {
             display: flex;
@@ -63,7 +73,7 @@
         
         .about-header {
             margin-top: 20px;
-            font-size: 36px; /* 1.5 times bigger */
+            font-size: 30px; /* 1.5 times bigger */
             color: #34495e;
             font-weight: normal; /* Set font weight to normal */
             text-transform: uppercase; /* Convert text to uppercase */
@@ -116,7 +126,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 80%;
+            width: 60%;
             margin-top: 20px;
             margin:auto;
             padding-left:20px;
@@ -144,7 +154,7 @@
         
         .skill {
             width: 30%;
-            padding: 20px;
+            padding: 25px;
             text-align: center; /* Center-align the text */
             animation-delay: 1.6s;
         }
@@ -158,6 +168,67 @@
         .skill ul li {
             text-align: center; /* Center-align the list items */
         }
+
+        /* RESEARCH Section */
+        .research-header {
+            font-size: 36px;
+            color: #34495e;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+	    margin:auto;
+            animation-delay: 1.2s;
+        }
+
+        .research-container {
+            display: flex;
+            width: 60%;
+            margin-top: 20px;
+            margin:auto;
+            padding-left:20px;
+            padding-right:20px;
+            text-align: center;
+            animation-delay: 1s;
+        }
+	
+	.research-container-full{
+	    display: flex;
+            width: 100%;
+            margin-top: 20px;
+            margin:auto;
+            padding-left:20px;
+            padding-right:20px;
+            text-align: center;
+            animation-delay: 1s;
+	}
+
+        .research-content {
+            width:50%;
+            padding: 20px;
+            animation-delay: 1.6s;
+        }
+	.research-content-full{
+	    margin:auto;
+	    width:60%;
+            padding: 20px;
+            animation-delay: 1.6s;
+	}
+
+        @media only screen and (max-width: 750px) {
+            .research-container {
+                flex-direction: column;
+            }
+
+            .research-content {
+                width: 100%;
+            }
+	    .research-content-full{
+	        margin:auto;
+	        width:100%;
+                padding: 20px;
+                animation-delay: 1.6s;
+	     }
+        }
     </style>
 </head>
 <body>
@@ -165,9 +236,9 @@
     <div class="container">
         <img src="https://vaisnymed.github.io/Vaisny-Med/headshot_02.jpg" alt="Large Header Photo" class="large-photo">
         <div class="about-text">
-            <h2 class="about-header">ABOUT VAISNY</h2>
+            <h2 class="about-header">ABOUT VAISNY BALAMURALI</h2>
             <p>
-                Here's where you'll introduce Vaisny, offering readers a glimpse into their background, interests, and whatever else you find pertinent. It's a good place to share what makes their story unique, their professional journey, personal philosophies, or even hobbies and interests.
+                Hailing from Toronto, Canada I am a passionate & results-driven healthcare research professional and medical student (MS3). My interests lie in applying analytical skills to interpret clinical data to inform health systems planning and clinical care delivery; improving the quality & sustainability of health care delivery and ultimately improving population health outcomes & statuses.  My non-traditional journey to become a physician was driven by my desire to leverage frontline experience as a clinician to advocate for improved & equitable healthcare access and patient care outcomes within the realms of<b> women’s health</b> and <b>marginalized populations</b>. 
             </p>
             <!-- My Resume and Contact Me buttons -->
             <div class="buttonDiv"> <!-- Added Bootstrap utility classes -->
@@ -182,35 +253,83 @@
     </div>
     <!-- SKILLS Section -->
     <div class="skills-container">
-        <h2 class="skills-header">SKILLS</h2>
+        <h2 class="skills-header">KEY SKILLS</h2>
         <div class="skills-row">
             <div class="skill">
-                <h3>Skill 1</h3>
+            
                 <ul>
-                    <li>Sub-skill 1</li>
-                    <li>Sub-skill 2</li>
-                    <li>Sub-skill 3</li>
+                    <li>Research & Analysis</li>
+                    <li>Project Tracking & Management </li>
+                    <li>Strategic Planning and Execution</li>
                 </ul>
             </div>
             <div class="skill">
-                <h3>Skill 2</h3>
+                
                 <ul>
-                    <li>Sub-skill 1</li>
-                    <li>Sub-skill 2</li>
-                    <li>Sub-skill 3</li>
+                    <li>Data Collection and Management </li>
+                    <li>Financial Reporting & Tracking</li>
+                    <li>Stakeholder Engagement</li>
                 </ul>
             </div>
             <div class="skill">
-                <h3>Skill 3</h3>
+               
                 <ul>
-                    <li>Sub-skill 1</li>
-                    <li>Sub-skill 2</li>
-                    <li>Sub-skill 3</li>
+                    <li>Reports & Presentations</li>
+                    <li>Communication & Education</li>
+                    <li>Leadership & Team Building </li>
                 </ul>
             </div>
         </div>
     </div>
+
 </div>
+
+<!-- RESEARCH Section -->
+<div class="container2">
+	<div class="research-header">LEADERSHIP & PROJECTS</div>
+</div>
+<div class="research-container">
+    <div class="research-content">
+        <h5><b>National Leader Opiates & Addiction Coordinator American Student Medical Association - Present</b></h5>
+        <p>Execution of AMSA’s programming and advocacy efforts in Opiates and Addictions care provision through strategic planning and work with multiple internal and external stakeholders across the nation.  Identify gaps in physician training. Build knowledge database with  up-to-date  content, research, subject matter experts and current practices regarding opiates and addictions for AMSA members.</p>
+    </div>
+    <div class="research-content">
+        <h5><b>St. George Opiates & Addictions Project – A neighborhood revitalization Toronto Central Local Health Integration Network - 2018</b></h5>
+        <p>A neighborhood revitalization initiative that created a safe space for substance use disorder patients and recovering addicts and provided access to an integrated interdisciplinary care team on-site. This solution improved health outcomes, reduced opioid related emergency-room visits and mortality associated with substance use disorders. This initiative further reduced cost in healthcare and social care delivery across multiple sectors that were then reinvested back into local  care programs.</p>
+    </div>
+</div>
+<!-- RESEARCH Intern-->
+<div class="container2">
+	<div class="research-header">RESEARCH</div>
+</div>
+<div class="research-container-full">
+    <div class="research-content-full">
+        <h5><b>Research Intern Sinai Urban Health Institute (Chicago, IL) - Present</b></h5>
+        <p>Project: Improving Diabetes Equity and Advancing Care (IDEA) Study
+	Funded by Agency for Healthcare Research and Quality this convergent-mixed methods optimization study aims to determine the appropriateness and fidelity of three intervention components of the Sinai Center for Diabetes and Endocrinology’s team based care model to define the ideal sequence of therapy and education for improving patient outcomes within a high acuity urban population. 
+	Role & Responsibilities: Participant screening & recruitment, data collection, cleaning & analysis, preparation of reports, presentations and manuscripts.
+	</p>
+    </div>
+</div>
+<!-- Case Report Section -->
+<div class="container2">
+	<div class="research-header">CASE REPORTS</div>
+</div>
+<div class="research-container">
+    <div class="research-content">
+        <h5><b>Title: Pregnancy in Misdiagnosed Rudimentary Horn with Unicornuate Uterus resulting in Uterine Rupture</b></h5>
+        <p><b>Authors:</b> Vaisny Balamurali BSc., Mara Ulin MD., Martha A. Figueroa MD
+	</br><b>Submitted for Publication:</b> April 2024, American College of Obstetricians and Gynecologists (Green Journal/ ACOG</p>
+    </div>
+    <div class="research-content">
+        <h5><b>Title: A case of metastatic gastric adenocarcinoma hiding in the bone marrow</b></h5>
+        <p><b>Authors:</b> Vaisny Balamurali BSc., Mara Ulin MD., Martha A. Figueroa MD 
+	</br><b>Presented:</b> Mount Sinai Hospital Research Day April 24, 2024 
+	</br> <b>Submitted for Publication: February 2024, British Medical Journal (BMJ)</p>
+
+    </div>
+</div>
+
 <script>
     // Function to get URL parameter
     function getURLParameter(name) {
